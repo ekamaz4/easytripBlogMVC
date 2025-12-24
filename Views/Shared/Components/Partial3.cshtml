@@ -1,0 +1,27 @@
+﻿@using easy_trip.Models.Siniflar;
+@inject Context c;
+@{
+    int sayac = 0;
+    bool kontrol = false;
+    var degerler = c.Blogs.OrderByDescending(x=>x.ID).Take(6).ToList();
+}
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+    @foreach (var x in degerler)
+    {
+        kontrol = (sayac < 6) ? kontrol = true : kontrol = false;
+        if (kontrol ==true)
+        {
+            <div class="box1-left">
+                <div class="bot-img">
+                    <a href="/Blog/BlogDetay/@x.ID"><img src="@x.BlogImage" style="width:200px;height:85px;" alt="" /></a>
+                </div>
+                <div class="bot-desc1" style="overflow:hidden; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; height:85px;">
+                    <p>@x.Aciklama</p>
+                </div>
+            </div>
+        }
+
+        sayac++;
+    }
+</div>

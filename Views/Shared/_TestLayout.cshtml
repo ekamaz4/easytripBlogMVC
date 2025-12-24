@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Free Easy-Trip Website Template</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/web/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/web/js/jquery.min.js"></script>
+    <script src="~/web/js/responsiveslides.min.js"></script>
+
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+          // Slideshow 1
+          $("#slider1").responsiveSlides({
+             auto: true,
+             nav: true,
+             speed: 500,
+             namespace: "callbacks",
+          });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo" style="height:150px;width:500px;"><a href="/Default/Index/">
+                <img src="~/img/logo.png" alt="" />
+                </a></div>
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="~/web/images/contact.png" alt="">
+                </div>
+                <div class="grid1-l-desc" style=" width:250px;">
+                    <p>Whatsapp : +90 530 860 72 04</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a href="/Default/Index/">Ana Sayfa</a></li>
+                <li><a class="hsubs" href="/About/">Hakkımızda</a></li>
+                <li>
+                    <a class="hsubs" href="destinations.html">Rehber</a>
+                    <ul class="subs">
+                        <li><a href="#">Oteller</a></li>
+                        <li><a href="#">Restorantlar</a></li>
+                        <li><a href="#">Müzeler</a></li>
+                    </ul>
+                </li>
+                <li><a class="hsubs" href="/Blog/">Blogum</a></li>
+                <li><a href="/Default/Contact/">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>&copy; 2025 Tatil-Seyehat.Tüm Hakları Saklıdır | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

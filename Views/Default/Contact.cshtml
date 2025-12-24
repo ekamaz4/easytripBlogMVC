@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<body>
+    <div class="contact">
+        <div class="wrap">
+            <div class="contact-top">
+                <h3>İletişim Bilgileri</h3>
+                <p> insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nu</p>
+            </div>
+            <div class="form">
+                <form class="cmxform" id="contactForm" method="post">
+                    <div>
+                        <input type="text" class="textbox" value="Ad.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+                    </div>
+                    <div>
+                        <input type="text" class="textbox" value="Mail Adresi.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+                    </div>
+                    <div>
+                        <input type="text" class="textbox" value="Telefon.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}">
+                    </div>
+                    <div>
+                        <p><span class="read">Gönder</span></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form1">
+                <div>
+                    <textarea value="Mesaj..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Mesaj...</textarea>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="contact-bottom">
+                <div class="contact-left">
+                    <div class="contact-add">
+                        <h3>Adres</h3>
+                        <p> insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+                        <p>Telephone:1-22-5555</p>
+                        <p>Fax:1-22-5555</p>
+                        <p>Email:<a href="mailto:signup@gmail.com">signup@mail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.6277820851788!2d28.98079861162022!3d41.01151947123057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9b8afa5f833%3A0x15aa1943c3015300!2zVG9wa2FwxLEgU2FyYXnEsSBNw7x6ZXNp!5e0!3m2!1str!2str!4v1766177372141!5m2!1str!2str" width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+

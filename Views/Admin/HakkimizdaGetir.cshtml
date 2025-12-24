@@ -1,0 +1,33 @@
+﻿@model easy_trip.Models.Siniflar.Hakkimizda
+@{
+    ViewData["Title"] = "HakkimizdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<br />
+<h2>Ön İzleme Alanı</h2>
+<div class="content d-flex justify-content-center align-items-center">
+    <img src="@Model.FotoUrl" style="width:400px; height:300px;" />
+    <br />
+</div>
+<div class="content d-flex justify-content-start align-items-center">
+    <p>
+        @Model.Aciklama
+    </p>
+</div>
+<br />
+<br />
+<hr />
+<h2>Hakkımızda Sayfası Güncelleme</h2>
+@using(Html.BeginForm("HakkimizdaGuncelle", "Admin", FormMethod.Post))
+{
+   @Html.HiddenFor(x => x.ID)
+   @Html.LabelFor(x=>x.Aciklama)
+   @Html.TextAreaFor(x => x.Aciklama,10,1, new { @class = "form-control"})
+    <br />
+   @Html.LabelFor(x=>x.FotoUrl)
+   @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control"})
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+}
+
+

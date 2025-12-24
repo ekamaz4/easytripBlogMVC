@@ -1,0 +1,22 @@
+﻿@using easy_trip.Models.Siniflar;
+@model List<Hakkimizda>
+
+@{
+	ViewBag.Title = "About";
+	Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+	<div class="wrap">
+	
+		<div class="about d-flex justify-content-center align-items-center">
+		<h3>About</h3>
+			@foreach(var x in Model)
+			{
+				<img src="@x.FotoUrl" style="width:970px; height:380px;" />
+               @*<p>@Html.Raw(x.Aciklama)</p>*@
+				<p>@x.Aciklama</p>
+			}
+		</div>
+	</div>
+</div>

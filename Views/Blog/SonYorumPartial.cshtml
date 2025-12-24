@@ -1,0 +1,8 @@
+﻿@model easy_trip.Models.Siniflar.BlogYorum
+<h3>Son Yorumlar</h3>
+@foreach (var x in Model.SonYorumDegerler)
+{
+    <ul>
+        <li><a href="#">@(x.KullaniciAdi.Length>2? x.KullaniciAdi.Substring(0,2)+"***":x.KullaniciAdi)</a> ; <a href="/Blog/BlogDetay/@x.Blogid">@(x.Yorum.Length>40 ? x.Yorum.Substring(0,40):x.Yorum)</a></li>
+    </ul>
+}

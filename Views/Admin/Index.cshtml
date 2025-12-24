@@ -1,0 +1,31 @@
+﻿@using easy_trip.Models.Siniflar;
+@model List<Blog>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Blog listesi</h1>   
+<a href="/Admin/YeniBlog/" class="btn btn-primary">Yeni Blog</a>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>BAŞLIK</td>
+        <td>SİL</td>
+        <td>GÜNCELLE</td>
+        <td>DETAYLAR</td>
+    </tr>
+    @foreach (var item in Model.OrderBy(x=>x.ID))
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Baslik</td>
+            <td><a href="/Admin/BlogSil/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a  href ="/Admin/BlogGetir/@item.ID" class="btn btn-warning">Güncelle</a>
+            <td><a  href ="#" class="btn btn-info">Detaylar</a>
+    
+        </td>
+        </tr>
+    }
+</table>

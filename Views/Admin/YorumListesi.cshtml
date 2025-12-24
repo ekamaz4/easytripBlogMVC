@@ -1,0 +1,33 @@
+﻿@using easy_trip.Models.Siniflar
+@model List<Yorumlar>
+@{
+    ViewData["Title"] = "YorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yorum Listesi</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>Kullanıcı</td>
+        <td>Mail</td>
+        <td>Yorum</td>
+        <td>Blog</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model.OrderByDescending(x=>x.ID))
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.KullaniciAdi</td>
+            <td>@item.MailAdres</td>
+            <td>@item.Yorum</td>
+            <td>@item.Blogid</td>
+            <td><a href="/Admin/YorumSil/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/YorumGetir/@item.ID" class="btn btn-warning">Güncelle</a></td>
+
+        </tr>
+    }  
+</table>

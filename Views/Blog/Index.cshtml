@@ -1,0 +1,40 @@
+﻿@model easy_trip.Models.Siniflar.BlogYorum
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<head>
+    <title>Personal Blog </title>
+
+</head>
+<div class="single">
+    <div class="container">
+        <div class="col-md-8 single-main">
+            @foreach (var x in Model.Deger1.OrderByDescending(x => x.ID))
+            {
+                <br />
+                <div class="single-grid">
+                    <img src="@x.BlogImage" alt="" style="margin-bottom:10px" />
+                    <a href="/Blog/BlogDetay/@x.ID" style="color:red;">@x.Baslik &ensp;</a>
+                    <span style="color:black;">@x.Tarih.ToString("dd MMMM yyyy")</span>
+                    <br /><br />
+                    <p>
+                        @(x.Aciklama.Length > 230 ? x.Aciklama.Substring(0, 230)+"..." : x.Aciklama)<a class="btn btn-link" style="color:black" href="/Blog/BlogDetay/@x.ID">Devamını Oku..</a>
+                    </p>
+                </div>
+
+            }
+        </div>
+        <div class="col-md-4 side-content">
+            <div class="recent">
+                 <partial name="SonBlogPartial" />
+            </div>
+            <div class="comments">
+                <h3>Son Yorumlar</h3>
+                <ul>
+                    <partial name="SonYorumPartial" />
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

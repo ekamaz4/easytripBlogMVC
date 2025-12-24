@@ -1,0 +1,8 @@
+﻿@model easy_trip.Models.Siniflar.BlogYorum
+<h3>Son Bloglar</h3>
+@foreach (var x in Model.Deger3 )
+{
+    <ul>
+        <li><a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a></li>
+    </ul>
+}

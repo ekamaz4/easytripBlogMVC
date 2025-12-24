@@ -1,0 +1,18 @@
+﻿@using easy_trip.Models.Siniflar
+@model List<Blog>
+@inject Context c;
+@{
+    int sayac = 1;
+    var Top10Blogs = c.Blogs.OrderByDescending(x => x.ID).Take(10).ToList();
+}
+<div class="padding">
+    <h4>En Popüler 10 Blog</h4>
+    <ul class="list list-pad">
+        @foreach (var x in Top10Blogs)
+        {
+            <li class="list-bg"><span>@sayac.</span><a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a></li>
+            sayac++;
+        }
+    </ul>
+    <a href="/Blog/" class="link1">Tüm Blogları Gör</a>
+</div>
